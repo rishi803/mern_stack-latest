@@ -10,7 +10,6 @@
 
 # production
 
-
 # misc
 /backend/config/config.env
 /frontend/.DS_Store
