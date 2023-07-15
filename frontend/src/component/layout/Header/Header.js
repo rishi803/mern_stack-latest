@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactNavbar } from "overlay-navbar";
-import logo from "../../../images/logo3.png";
+import logo from "../../../images/logo2.png";
 import { MdAccountCircle, MdAddShoppingCart, MdSearch } from "react-icons/md";
 
 const options = {
