@@ -36,7 +36,7 @@
 }
 
 .LoginSignUpBox > div > button {
-  background-color: tomato;
+  background-color: #4287f5;
   height: 3px;
   width: 50%;
   border: none;
@@ -127,7 +127,7 @@
 .loginBtn,
 .signUpBtn {
   border: none;
-  background-color: tomato;
+  background-color: #4287f5;
   color: white;
   font: 300 0.9vmax "Roboto";
   width: 100%;

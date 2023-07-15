@@ -13,7 +13,7 @@ import MetaData from "../layout/MetaData";
 const categories = [
   "Laptop",
   "Footwear",
-  "Bottom",
+  "Electronic Devices",
   "Tops",
   "Attire",
   "Camera",

@@ -30,7 +30,7 @@ const NewProduct = ({ history }) => {
   const categories = [
     "Laptop",
     "Footwear",
-    "Bottom",
+    "Electronic Devices",
     "Tops",
     "Attire",
     "Camera",

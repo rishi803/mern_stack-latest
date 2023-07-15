@@ -9,3 +9,7 @@
   height: 56px;
   border-radius: 100%;
 }
+.speedDialIcon:hover {
+  background-color: #450ef9;
+  /* Updated background color on hover */
+}

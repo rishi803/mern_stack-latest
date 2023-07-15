@@ -5,6 +5,7 @@
   padding: 6vmax;
   box-sizing: border-box;
   display: flex;
+  animation: fadeInUp 1s ease-in-out;
 }
 
 .ProductDetails > div {
@@ -23,8 +24,13 @@
 }
 
 .CarouselImage {
-  width: 20vmax;
+    width: 30vmax;
+      max-height: 40vmax;
+      object-fit: cover;
+    
+      animation: fadeIn 1s ease-in-out;
 }
+
 
 .detailsBlock-1 > h2 {
   color: rgb(54, 54, 54);
@@ -92,16 +98,24 @@
   cursor: pointer;
   color: white;
   transition: all 0.5s;
-  background-color: tomato;
+  background-color: #4287f5;
+    /* Updated button background color */
   font: 500 0.7vmax "Roboto";
   border-radius: 20px;
-  padding: 0.5vmax 2vmax;
+  padding: 0.6vmax 2vmax;
   margin: 1vmax;
   outline: none;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center align the button content */
 }
 
-.detailsBlock-3-1 > button:last-child:hover {
-  background-color: rgb(214, 84, 61);
+.detailsBlock-3-1>button:last-child::before {
+  content: "\2795";
+  /* Unicode character for a plus sign */
+  font-size: 1.2vmax;
+  margin-right: 0.5vmax;
 }
 
 .detailsBlock-3 > p {
@@ -119,13 +133,23 @@
 }
 
 .detailsBlock-4 > p {
-  color: rgba(0, 0, 0, 0.534);
-  font: 300 0.8vmax sans-serif;
+  border-top: 1px solid rgba(0, 0, 0, 0.205);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+    padding: 1vmax 0;
+    color: rgba(0, 0, 0, 0.651);
+    font: 400 1vmax "Roboto";
+    margin: 1vmax 0;
+    animation: fadeIn 1s ease-in-out;
+    list-style-type: disc;
+    /* Added list-style-type property for bullet points */
+    padding-left: 2rem;
+    /* Adjusted the left padding for bullet points */
 }
 
 .submitReview {
   border: none;
-  background-color: tomato;
+  background-color: #4287f5;
+    /* Updated button background color */
   font: 500 0.7vmax "Roboto";
   border-radius: 20px;
   padding: 0.6vmax 2vmax;
@@ -134,12 +158,21 @@
   cursor: pointer;
   transition: all 0.5s;
   outline: none;
+  animation: fadeIn 1s ease-in-out;
+    display: flex;
+    align-items: center;
 }
+
 .submitReview:hover {
   background-color: rgb(197, 68, 45);
   transform: scale(1.1);
 }
 
+.submitReview::before {
+  content: "➤";
+  font-size: 1.5vmax;
+  margin-right: 0.5vmax;
+}
 .submitDialog {
   display: flex;
   flex-direction: column;
@@ -162,34 +195,56 @@
   margin: auto;
   margin-bottom: 4vmax;
 }
+
 .reviews {
   display: flex;
   overflow: auto;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .reviewCard {
   flex: none;
-
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
   border: 1px solid rgba(56, 56, 56, 0.116);
-  width: 30vmax;
+  width: 20vmax;
+    /* Decreased width */
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 1vmax;
-  padding: 3vmax;
+  padding: 2vmax;
+    /* Decreased padding */
+    animation: fadeIn 1s ease-in-out;
 }
+
 .reviewCard > img {
-  width: 5vmax;
+  width: 4vmax;
+    /* Decreased image width */
+    height: 4vmax;
+    /* Added image height */
+    object-fit: cover;
+    border-radius: 50%;
+    /* Rounded image */
 }
+
 .reviewCard > p {
   color: rgba(0, 0, 0, 0.836);
-  font: 600 0.9vmax "Roboto";
+  font: 500 1vmax "Roboto";
+    /* Adjusted font size */
+    text-align: center;
+    margin-top: 1vmax;
+    /* Added margin-top */
 }
+
 .reviewCardComment {
   color: rgba(0, 0, 0, 0.445);
-  font: 300 0.8vmax cursive;
+  font: 400 0.8vmax cursive;
+    /* Adjusted font size and weight */
+    text-align: center;
+    margin-top: 1vmax;
+    /* Added margin-top */
 }
+
 
 .noReviews {
   font: 400 1.3vmax "Gill Sans";
@@ -197,6 +252,27 @@
   color: rgba(0, 0, 0, 0.548);
 }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 @media screen and (max-width: 600px) {
   .ProductDetails {
     flex-direction: column;

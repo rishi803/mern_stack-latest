@@ -30,7 +30,7 @@
 }
 
 .cartHeader {
-  background-color: tomato;
+  background-color: #4287f5;
   width: 90%;
   box-sizing: border-box;
   margin: auto;
@@ -112,7 +112,7 @@
   justify-content: flex-end;
 }
 .checkOutBtn > button {
-  background-color: tomato;
+  background-color: #4287f5;
   color: white;
   border: none;
   padding: 0.8vmax 4vmax;
