@@ -1,13 +1,14 @@
 import React from "react";
 import { ReactNavbar } from "overlay-navbar";
-import logo from "../../../images/logo3.png";
+import logo from "../../../images/logo2.png";
+import { MdAccountCircle, MdAddShoppingCart, MdSearch } from "react-icons/md";
 
 const options = {
   burgerColorHover: "#eb4034",
   logo,
-  logoWidth: "20vmax",
+  logoWidth: "10vmax",
   navColor1: "white",
-  logoHoverSize: "10px",
+  logoHoverSize: "5px",
   logoHoverColor: "#eb4034",
   link1Text: "Home",
   link2Text: "Products",
@@ -20,23 +21,31 @@ const options = {
   link1Size: "1.3vmax",
   link1Color: "rgba(35, 35, 35,0.8)",
   nav1justifyContent: "flex-end",
-  nav2justifyContent: "flex-end",
+  nav2justifyContent: "flex-start",
   nav3justifyContent: "flex-start",
   nav4justifyContent: "flex-start",
   link1ColorHover: "#eb4034",
   link1Margin: "1vmax",
+  profileIcon: true,
   profileIconUrl: "/login",
   profileIconColor: "rgba(35, 35, 35,0.8)",
+  ProfileIconElement: MdAccountCircle,
+  searchIcon: true,
   searchIconColor: "rgba(35, 35, 35,0.8)",
+  SearchIconElement: MdSearch,
+  cartIcon: true,
+  CartIconElement: MdAddShoppingCart,
   cartIconColor: "rgba(35, 35, 35,0.8)",
   profileIconColorHover: "#eb4034",
   searchIconColorHover: "#eb4034",
   cartIconColorHover: "#eb4034",
   cartIconMargin: "1vmax",
+
 };
 
 const Header = () => {
   return <ReactNavbar {...options} />;
+
 };
 
 export default Header;
