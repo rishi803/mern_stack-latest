@@ -30,6 +30,7 @@ const Home = () => {
           <MetaData title="ARF-MART" />
 
           <div className="banner">
+
             <p>Welcome to ARF MART</p>
             <h1>FIND AMAZING PRODUCTS BELOW</h1>
 

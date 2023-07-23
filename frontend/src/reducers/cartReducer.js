@@ -2,10 +2,11 @@ import {
   ADD_TO_CART,
   REMOVE_CART_ITEM,
   SAVE_SHIPPING_INFO,
+  UPDATE_ORDER_HISTORY,
 } from "../constants/cartConstants";
 
 export const cartReducer = (
-  state = { cartItems: [], shippingInfo: {} },
+  state = { cartItems: [], shippingInfo: {}, orderHistory: [] },
   action
 ) => {
   switch (action.type) {
@@ -40,6 +41,12 @@ export const cartReducer = (
       return {
         ...state,
         shippingInfo: action.payload,
+      };
+
+    case UPDATE_ORDER_HISTORY:
+      return {
+        ...state,
+        orderHistory: [...state.orderHistory, action.payload],
       };
 
     default:

@@ -106,6 +106,14 @@ module.exports = function (app) {
     })
   );
   app.use(
+    '/api/v1/orders',
+    createProxyMiddleware({
+      target: 'http://localhost:4000'
+      ,
+      changeOrigin: true,
+    })
+  );
+  app.use(
     '/api/v1/order',
     createProxyMiddleware({
       target: 'http://localhost:4000'

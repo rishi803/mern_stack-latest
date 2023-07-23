@@ -10,7 +10,9 @@
   align-items: center;
   justify-content: center;
   color: rgb(3, 3, 3);
+  
 }
+
 
 .banner>h1 {
   margin: 5vmax;
@@ -20,6 +22,12 @@
 
 .banner>p {
   font: 300 1.4vmax "Lucida Sans";
+}
+.banner p {
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideIn 1s forwards;
 }
 
 .banner>a>button {
@@ -135,5 +143,16 @@
   .productCard>div>span {
     margin: 0 0.5vmax;
     font: 300 1vmax "Roboto";
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
