@@ -42,6 +42,7 @@ import ProductReviews from "./component/Admin/ProductReviews";
 import Contact from "./component/layout/Contact/Contact";
 import About from "./component/layout/About/About";
 import NotFound from "./component/layout/Not Found/NotFound";
+import Chat from "./component/Home/Chat";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -79,7 +80,7 @@ function App() {
           <ProtectedRoute exact path="/process/payment" component={Payment} />
         </Elements>
       )}
-
+      <div><Chat /></div>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/product/:id" component={ProductDetails} />
