@@ -71,6 +71,7 @@ function App() {
 
   return (
     <Router>
+      <div><Chat /></div>
       <Header />
 
       {isAuthenticated && <UserOptions user={user} />}
@@ -80,7 +81,7 @@ function App() {
           <ProtectedRoute exact path="/process/payment" component={Payment} />
         </Elements>
       )}
-      <div><Chat /></div>
+
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/product/:id" component={ProductDetails} />

@@ -7,6 +7,7 @@ import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
+import Banner from "./Banner";
 
 const Home = () => {
   const alert = useAlert();
@@ -22,7 +23,10 @@ const Home = () => {
   }, [dispatch, error, alert]);
 
   return (
+
+
     <Fragment>
+
       {loading ? (
         <Loader />
       ) : (
@@ -41,8 +45,9 @@ const Home = () => {
             </a>
           </div>
 
-          <h2 className="homeHeading">Featured Products</h2>
 
+            <Banner />
+            <h2 className="homeHeading">Featured Products</h2>
           <div className="container" id="container">
             {products &&
               products.map((product) => (
