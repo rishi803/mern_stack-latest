@@ -48,7 +48,9 @@ const LoginSignUp = ({ history, location }) => {
     myForm.set("name", name);
     myForm.set("email", email);
     myForm.set("password", password);
-    myForm.set("avatar", avatar);
+    if (avatar) {
+      myForm.set("avatar", avatar);
+    }
     dispatch(register(myForm));
   };
 

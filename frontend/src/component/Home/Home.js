@@ -1,5 +1,4 @@
-import React, { Fragment, useEffect } from "react";
-import { BiMouse } from "react-icons/bi";
+import React, { Fragment, useEffect, useState } from "react";
 import "./Home.css";
 import ProductCard from "./ProductCard.js";
 import MetaData from "../layout/MetaData";
@@ -9,18 +8,57 @@ import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
 import Banner from "./Banner";
 
-const Home = () => {
-  const alert = useAlert();
+
+const categories = [
+  "Electronics",
+  "Appliances",
+  "Beauty, Toys & More",
+  "Fashion",
+  "Home and Furniture",
+  "Grocery",
+  "SmartPhones",
+];
+
+
+const Home = ({ match }) => {
   const dispatch = useDispatch();
-  const { loading, error, products } = useSelector((state) => state.products);
+
+  const alert = useAlert();
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [price, setPrice] = useState([0, 25000]);
+  const [category, setCategory] = useState("");
+
+  const [ratings, setRatings] = useState(0);
+
+  const {
+    products,
+    loading,
+    error,
+  } = useSelector((state) => state.products);
+
+  const keyword = match.params.keyword;
 
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
-    dispatch(getProduct());
-  }, [dispatch, error, alert]);
+
+    dispatch(getProduct(keyword, currentPage, price, category, ratings));
+  }, [dispatch, keyword, currentPage, price, category, ratings, alert, error]);
+  const categoryImages = [
+    "https://rukminim2.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100",
+    "https://rukminim2.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100",
+    "https://rukminim2.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100",
+    "https://rukminim2.flixcart.com/fk-p-flap/128/128/image/0d75b34f7d8fbcb3.png?q=100",
+    "https://rukminim2.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100",
+    "https://rukminim2.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100",
+    "https://rukminim2.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100",
+
+
+  ];
+
 
   return (
 
@@ -33,20 +71,31 @@ const Home = () => {
         <Fragment>
           <MetaData title="ARF-MART" />
 
-          <div className="banner">
-
-            <p>Welcome to ARF MART</p>
-            <h1>FIND AMAZING PRODUCTS BELOW</h1>
-
-            <a href="#container">
-              <button>
-                Scroll <BiMouse />
-              </button>
-            </a>
+            <div class="container-flex">
+              <div className="filterBox-f">
+                <ul className="categoryBox-f">
+                  {categories.map((category, index) => (
+                    <li
+                      className="category-card"
+                      key={category}
+                      onClick={() => setCategory(category)}
+                    >
+                      <div className="category-image">
+                        <img
+                          src={categoryImages[index]}
+                          alt={category}
+                          className="category-img"
+                        />
+                      </div>
+                      <span className="category-text">{category}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
           </div>
 
-
             <Banner />
+
             <h2 className="homeHeading">Featured Products</h2>
           <div className="container" id="container">
             {products &&
@@ -54,6 +103,7 @@ const Home = () => {
                 <ProductCard key={product._id} product={product} />
               ))}
           </div>
+
         </Fragment>
       )}
     </Fragment>

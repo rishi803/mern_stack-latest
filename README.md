@@ -1,10 +1,3 @@
-# MERN E-COMMERCE TUTORIAL
-
-
-
-# Prerequisite
-
-
 
 # Install Dependencies
 
@@ -35,5 +28,4 @@ CLOUDINARY_API_SECRET
 _fill each filed with your info respectively_
 
 ## Author
-
-
+TEAM ARF MART

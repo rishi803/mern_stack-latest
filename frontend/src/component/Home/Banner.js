@@ -3,10 +3,11 @@ import Carousel from 'react-material-ui-carousel'
 import "../Home/Banner.css";
 
 const data = [
-    "https://rukminim1.flixcart.com/flap/1680/280/image/1defb861e409319b.jpg?q=50",
-    " https://rukminim1.flixcart.com/flap/1680/280/image/685712c6cefb3c02.jpg?q=50",
-    "https://rukminim1.flixcart.com/flap/1680/280/image/8d4150cc4f3f967d.jpg?q=50",
-    "https://rukminim1.flixcart.com/flap/1680/280/image/685712c6cefb3c02.jpg?q=50"
+    "https://assets-static.invideo.io/images/origin/Creative_Clothing_Advertisement_Ideas_To_Boost_Sales_revised_3_1_cefa9cda88.png",
+    "https://assets-static.invideo.io/images/large/181_Fashion_Clothing_Ads_1_33b060017f.png",
+    "https://img.freepik.com/free-psd/fashion-event-facebook-template_23-2150283919.jpg?w=2000",
+
+
 ]
 
 // console.log(data);
@@ -28,7 +29,7 @@ const Banner = () => {
                         color: "#494949",
                         borderRadius: 0,
                         marginTop: -22,
-                        height: "104px",
+                        height: "100px",
                     }
                 }}>
                 {

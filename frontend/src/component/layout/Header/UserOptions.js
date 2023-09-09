@@ -14,7 +14,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 const UserOptions = ({ user }) => {
   const { cartItems } = useSelector((state) => state.cart);
-
   const [open, setOpen] = useState(false);
   const history = useHistory();
   const alert = useAlert();
@@ -62,7 +61,8 @@ const UserOptions = ({ user }) => {
   }
 
   return (
-    <Fragment>
+    <Fragment >
+      <div className="main-content">
       <Backdrop open={open} style={{ zIndex: "10" }} />
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
@@ -73,11 +73,19 @@ const UserOptions = ({ user }) => {
         direction="down"
         className="speedDial"
         icon={
-          <img
-            className="speedDialIcon"
-            src={user.avatar.url ? user.avatar.url : "/Profile.png"}
-            alt="Profile"
-          />
+          user.avatar && user.avatar.url ? (
+            <img
+              className="speedDialIcon"
+              src={user.avatar.url}
+              alt="Profile"
+            />
+          ) : (
+            <img
+              className="speedDialIcon"
+              src=""
+              alt="Default Profile"
+            />
+          )
         }
       >
         {options.map((item) => (
@@ -90,6 +98,7 @@ const UserOptions = ({ user }) => {
           />
         ))}
       </SpeedDial>
+      </div>
     </Fragment>
   );
 };

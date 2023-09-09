@@ -6,6 +6,7 @@
   color: rgba(0, 0, 0, 0.678);
   font: 500 1.5vmax "Roboto";
   text-align: center;
+  margin-top: 50px;
 }
 
 .products {
@@ -59,7 +60,7 @@
 }
 
 .pageItemActive {
-  background-color: #4287f5;
+  background-color: rgb(71, 102, 255);
 }
 
 .pageLinkActive {
@@ -86,7 +87,7 @@
   transition: all 0.5s;
 }
 .category-link:hover {
-  color: #4287f5;
+  color: tomato;
 }
 
 .filterBox > fieldset {
@@ -94,16 +95,50 @@
 }
 
 @media screen and (max-width: 600px) {
+  .productsHeading {
+      margin-top: 70px;
+    }
+  
+    .container {
+      display: flex;
+      flex-direction: column;
+  
+    }
   .filterBox {
-    width: 20vmax;
+    width: 100%;
     position: static;
-    margin: auto;
-  }
+top: auto;
+
+  left: auto;
+
+  margin-top: 2vmax;
+
+}
+
+.categoryBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  margin-left: 0px;
+}
+
+
+
+.productContent {
+  order: 2;
+
+}
+
 
   .page-link {
-    font: 300 1.7vmax "Roboto";
+    font: 300 1.2vmax "Roboto";
   }
+
   .category-link {
-    font: 400 1.8vmax "Roboto";
-  }
+    font: 400 1.6vmax "Roboto";
+    
+      padding: 2px;
+    }
+
 }

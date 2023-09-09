@@ -43,6 +43,7 @@ import Contact from "./component/layout/Contact/Contact";
 import About from "./component/layout/About/About";
 import NotFound from "./component/layout/Not Found/NotFound";
 import Chat from "./component/Home/Chat";
+import Navbar from "./component/layout/Header/Navbar";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -75,7 +76,7 @@ function App() {
       <Header />
 
       {isAuthenticated && <UserOptions user={user} />}
-
+      <Navbar user={user} />
       {stripeApiKey && (
         <Elements stripe={loadStripe(stripeApiKey)}>
           <ProtectedRoute exact path="/process/payment" component={Payment} />

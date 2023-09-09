@@ -8,26 +8,47 @@ const cloudinary = require("cloudinary");
 
 // Register a User
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
-  const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
-    folder: "avatars",
-    width: 150,
-    crop: "scale",
-  });
+  try {
+    let avatarData = {}; // Initialize an empty object for avatar data
 
-  const { name, email, password } = req.body;
+    if (req.body.avatar) {
+      // Check if an avatar is provided in the request body
+      const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+        folder: "avatars",
+        width: 150,
+        crop: "scale",
+      });
 
-  const user = await User.create({
-    name,
-    email,
-    password,
-    avatar: {
-      public_id: myCloud.public_id,
-      url: myCloud.secure_url,
-    },
-  });
+      // Set avatarData if an avatar is uploaded
+      avatarData = {
+        public_id: myCloud.public_id,
+        url: myCloud.secure_url,
+      };
+    }
 
-  sendToken(user, 201, res);
+    const { name, email, password } = req.body;
+
+    const userData = {
+      name,
+      email,
+      password,
+    };
+
+    // If avatarData is not empty, add it to the userData
+    if (Object.keys(avatarData).length > 0) {
+      userData.avatar = avatarData;
+    }
+
+    const user = await User.create(userData);
+
+    sendToken(user, 201, res);
+  } catch (error) {
+    // Handle any errors that occur during registration
+    console.error(error);
+    return res.status(500).json({ success: false, error: "Internal Server Error" });
+  }
 });
+
 
 // Login User
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {

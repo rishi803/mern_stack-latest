@@ -1,10 +1,10 @@
 .banner_img {
     width: 100vw;
-    height: 280px;
+    height: 350px;
 }
 
 .carasousel {
-    margin-top: 10;
+    margin-top: 50px;
 }
 
 
@@ -13,4 +13,7 @@
         object-fit: cover;
         height: 180px;
     }
+        .carasousel {
+            margin-top: 50px;
+        }
 }

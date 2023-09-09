@@ -11,12 +11,12 @@ import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
 
 const categories = [
-  "Laptop",
-  "Footwear",
-  "Electronic Devices",
-  "Tops",
-  "Attire",
-  "Camera",
+  "Electronics",
+  "Appliances",
+  "Beauty, Toys & More",
+  "Fashion",
+  "Home and Furniture",
+  "Grocery",
   "SmartPhones",
 ];
 
@@ -69,13 +69,7 @@ const Products = ({ match }) => {
             <MetaData title="PRODUCTS -- ARF MART" />
           <h2 className="productsHeading">Products</h2>
 
-          <div className="products">
-            {products &&
-              products.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
-          </div>
-
+            <div class="container">
           <div className="filterBox">
             <Typography>Price</Typography>
             <Slider
@@ -112,8 +106,17 @@ const Products = ({ match }) => {
                 min={0}
                 max={5}
               />
-            </fieldset>
-          </div>
+                </fieldset>
+              </div>
+            </div>
+
+            <div className="products">
+              {products &&
+                products.map((product) => (
+                  <ProductCard key={product._id} product={product} />
+                ))}
+            </div>
+
           {resultPerPage < count && (
             <div className="paginationBox">
               <Pagination

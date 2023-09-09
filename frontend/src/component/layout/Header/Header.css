@@ -2,6 +2,7 @@
   position: fixed;
   right: 3vmax;
   top: 3vmax;
+  margin-top: 30px;
 }
 
 .speedDialIcon {
@@ -12,4 +13,10 @@
 .speedDialIcon:hover {
   background-color: #450ef9;
   /* Updated background color on hover */
+}
+@media (max-width: 768px) {
+  .speedDial {
+    margin-top: 100px;
+    /* Apply margin-top on mobile devices */
+  }
 }
