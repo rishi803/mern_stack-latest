@@ -10,6 +10,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-top: 70px;
 }
 
 #myOrdersHeading {
@@ -59,11 +60,13 @@
   .myOrdersPage {
     padding: 0;
     height: 93vh;
+    margin-top: 100px;
   }
 
   #myOrdersHeading {
     font: 400 2.2vmax "Roboto";
     padding: 4vw;
+
   }
 
   .myOrdersTable div {

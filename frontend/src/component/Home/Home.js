@@ -12,7 +12,7 @@ import Banner from "./Banner";
 const categories = [
   "Electronics",
   "Appliances",
-  "Beauty, Toys & More",
+  "Toys and More",
   "Fashion",
   "Home and Furniture",
   "Grocery",

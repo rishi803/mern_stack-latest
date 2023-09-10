@@ -40,7 +40,7 @@ const UpdateProduct = ({ history, match }) => {
   const categories = [
     "Electronics",
     "Appliances",
-    "Beauty, Toys & More",
+    "Toys and More",
     "Fashion",
     "Home and Furniture",
     "Grocery",
