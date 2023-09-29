@@ -28,6 +28,9 @@ import {
   DELETE_REVIEW_REQUEST,
   DELETE_REVIEW_SUCCESS,
   DELETE_REVIEW_FAIL,
+  FETCH_CATEGORY_PRODUCTS_REQUEST,
+  FETCH_CATEGORY_PRODUCTS_SUCCESS,
+  FETCH_CATEGORY_PRODUCTS_FAILURE,
   CLEAR_ERRORS,
 } from "../constants/productConstants";
 
@@ -229,6 +232,35 @@ export const deleteReviews = (reviewId, productId) => async (dispatch) => {
       type: DELETE_REVIEW_FAIL,
       payload: error.response.data.message,
     });
+  }
+};
+
+export const fetchCategoryProductsRequest = () => ({
+  type: FETCH_CATEGORY_PRODUCTS_REQUEST,
+});
+
+// Action creator for successful category products fetch
+export const fetchCategoryProductsSuccess = (products) => ({
+  type: FETCH_CATEGORY_PRODUCTS_SUCCESS,
+  payload: products,
+});
+
+// Action creator for category products fetch failure
+export const fetchCategoryProductsFailure = (error) => ({
+  type: FETCH_CATEGORY_PRODUCTS_FAILURE,
+  payload: error,
+});
+
+// Async action creator to fetch category products
+export const fetchCategoryProducts = (category) => async (dispatch) => {
+  try {
+    dispatch(fetchCategoryProductsRequest());
+
+    const { data } = await axios.get(`/api/v1/products?category=${category}`);
+
+    dispatch(fetchCategoryProductsSuccess(data.products));
+  } catch (error) {
+    dispatch(fetchCategoryProductsFailure(error.response.data.message));
   }
 };
 

@@ -1,8 +1,8 @@
 footer {
   margin-top: 10vmax;
   padding: 2vmax;
-  background-color: rgb(236, 175, 175);
-  color: rgb(14, 14, 14);
+  background-color: #2d3e50;
+    color: #838b99;
   display: flex;
   align-items: center;
 }
@@ -17,48 +17,46 @@ footer {
 .leftFooter>h4 {
   font-family: "Roboto", sans-serif;
     font-size: 1.2vmax;
-    /* Adjusted font size */
+
     margin-bottom: 0.5vmax;
-    /* Added margin-bottom */
+  
 }
 
 .leftFooter>p {
   text-align: center;
   font-size: 1vmax;
-    /* Adjusted font size */
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .leftFooter>img {
   width: 8vmax;
-    /* Decreased image width */
+  
   margin: 1vmax;
   cursor: pointer;
 }
 
 .midFooter {
   flex-grow: 1;
-    /* Added flex-grow to expand the width */
   text-align: center;
 }
 
 .midFooter>h1 {
   font-size: 3vmax;
-    /* Adjusted font size */
+  
     font-family: "Roboto", sans-serif;
-  color: #eb4034;
+  color: #838b99;
   margin-bottom: 1vmax;
-    /* Added margin-bottom */
+  
 }
 
 .midFooter>p {
   max-width: 80%;
-    /* Adjusted max-width */
+  
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.2vmax;
-    /* Adjusted font size */
+  
     margin: 0 auto;
-    /* Center align the text */
+  
 }
 
 .rightFooter {
@@ -68,36 +66,179 @@ footer {
   align-items: center;
 }
 
-.rightFooter>h4 {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.3vmax;
-  /* Adjusted font size */
-  text-decoration: underline;
-  margin-bottom: 0.5vmax;
-    /* Added margin-bottom */
-}
+
 
 .rightFooter>a {
   text-decoration: none;
   font-size: 1.2vmax;
-    /* Adjusted font size */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: white;
   transition: all 0.5s;
   margin: 0.3vmax;
-    /* Adjusted margin */
+
     display: inline-block;
-    /* Added display property */
+  
     padding: 0.3vmax 1vmax;
-    /* Added padding for button-like appearance */
-    background-color: #eb4034;
-    /* Added background color */
+    background-color: #838b99;
+    
+      border-radius: 50%;
+    
+    }
+    
+    .rightFooter>a:hover {
+      color: white;
+      background-color: #838b99;
+    
+    }
+    
+    
+    .newsletter {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .newsletter p {
+      margin: 0;
+    
+    }
+    
+    .form-label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: white;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.5rem;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+  background-color: transparent;
+    color: white;
+  }
+  
+  .btn-outline-light {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
     border-radius: 4px;
-    /* Added border radius */
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #008080;
+  }
+  
+  
+  .links {
+    text-align: center;
+    margin-top: 2rem;
+  
+    margin-bottom: 2rem;
+  
+  }
+  
+  
+  .links h5 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .links ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .links ul li {
+    margin: 0.5rem 0;
 }
 
-.rightFooter>a:hover {
+.links a {
+  text-decoration: none;
   color: white;
-  background-color: #ff6658;
-  /* Updated background color on hover */
+  display: block;
+    padding: 0.25rem 0;
+    transition: color 0.3s ease;
+  }
+  
+  .links a:hover {
+    color: teal;
+  }
+  
+  
+  .links ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .links ul li::before {
+    content: none;
+  }
+  
+  
+  
+  
+  /* Define a media query for screens with a maximum width of 767px (typical for mobile devices) */
+  @media screen and (max-width: 600px) {
+  
+  
+    .footer {
+  
+      margin-top: 5vmax;
+      padding: 1vmax;
+      background-color: #2d3e50;
+    }
+  
+    .leftFooter {
+  
+      width: 100%;
+    }
+  
+    .leftFooter>h4 {
+  
+      font-size: 1.5vmax;
+      margin-bottom: 0.3vmax;
+    }
+  
+  
+  
+    .newsletter {
+  
+      margin-bottom: 1rem;
+    }
+  
+    .form-label {
+  
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  
+    .links {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  
+    .form-outline.form-white.mb-4 {
+      width: 100%;
+  
+    }
+  
+    .form-control {
+      text-align: center;
+    }
+  
+    .form-label {
+      font-size: 14px;
+  
+    }
+  
+    .form-outline.form-white.mb-4>input {
+      width: 50%;
+    }
+
 }

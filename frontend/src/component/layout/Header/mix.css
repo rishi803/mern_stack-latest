@@ -41,6 +41,7 @@
 
 .custom-nav-item {
     position: relative;
+
 }
 
 .custom-nav-item a {
@@ -54,14 +55,14 @@
 }
 
 .custom-nav-item a:hover {
-    color: #f0c14b;
+    color: #c4c4c7;
 }
 
 .custom-icons {
     display: flex;
     gap: 10px;
     margin-left: auto;
-    margin-right: 20px;
+    margin-right: 60px;
 
     align-items: center;
 
@@ -71,6 +72,7 @@
 .custom-search-bar form {
     display: flex;
     align-items: center;
+
 }
 
 .custom-search-bar input[type="text"] {
@@ -83,7 +85,7 @@
 }
 
 .custom-search-bar button[type="submit"] {
-    background-color: #007bff;
+    background-color: #000102;
 
     color: #fff;
     border: none;
@@ -94,7 +96,7 @@
 }
 
 .custom-search-bar button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #b6b7b8;
 
 }
 
@@ -109,23 +111,52 @@
     font-size: 10px;
 }
 
+.active-link {
+    background-color: rgb(201, 201, 196);
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 5px 10px;
+    /* Padding for better appearance */
+    font-weight: bold;
+    /* Bold text for emphasis */
+    text-decoration: none;
+}
+
+.custom-username {
+    color: rgb(97, 27, 237);
+}
+
+.search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Adjust the input field's padding to create space for the close icon */
+
 
 /* Responsive styles for mobile */
-@media (max-width: 768px) {
-
-
+/* Responsive styles for mobile */
+@media screen and (max-width: 600px) {
     .custom-menu-toggle {
         display: block;
     }
 
+        .custom-navbar {
+            padding: 10px 20px;
+            /* Increase padding for better mobile readability */
+        }
     .custom-search-bar {
+        position: relative;
+            top: 30px;
+            right: 15%;
+        }
 
-        position: absolute;
 
-        top: 10px;
 
-        right: 60px;
-
+        .custom-username {
+            margin-right: 10px;
+            /* Add margin to separate the username from the search bar */
     }
 
     .custom-nav-links {
@@ -136,9 +167,16 @@
         left: 0;
         right: 0;
         background-color: #ffffff;
-
         text-align: center;
         z-index: 1;
+        padding: 10px 0;
+            /* Add padding to separate links */
+        }
+        
+        .custom-nav-item {
+        
+            margin: 15px 30px;
+            /* Add margin to separate individual links */
     }
 
     .mobile-open .custom-nav-links {
@@ -153,7 +191,6 @@
 
     .mobile-open .custom-icons {
         display: flex;
-        /* Show icons on mobile */
     }
 
     .custom-icons a {

@@ -9,6 +9,7 @@ import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
+import CountdownTimer from "./CountDownTimer";
 
 const categories = [
   "Electronics",
@@ -67,8 +68,8 @@ const Products = ({ match }) => {
       ) : (
         <Fragment>
             <MetaData title="PRODUCTS -- ARF MART" />
-          <h2 className="productsHeading">Products</h2>
-
+            <h2 className="productsHeading">Best Deals</h2>
+            <CountdownTimer countdownTimestampMs={1735686000000} />
             <div class="container">
           <div className="filterBox">
             <Typography>Price</Typography>

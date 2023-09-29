@@ -21,8 +21,12 @@ import {
 } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
-
+import { BsFillHandbagFill } from "react-icons/bs";
+import ReactImageMagnify from 'react-image-magnify';
 const ProductDetails = ({ match }) => {
+
+  const [showFullDescription, setShowFullDescription] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
   const dispatch = useDispatch();
   const alert = useAlert();
 
@@ -99,6 +103,24 @@ const ProductDetails = ({ match }) => {
     dispatch(getProductDetails(match.params.id));
   }, [dispatch, match.params.id, error, alert, reviewError, success]);
 
+  if (!product || !product.description) {
+    return null; // or some fallback content if needed
+  }
+  const descriptionLines = product.description.split('\n');
+
+
+
+  const displayedDescription = showFullDescription
+    ? descriptionLines
+    : descriptionLines.slice(0, 3);
+
+  const handleImageClick = (index) => {
+    setSelectedImage(index);
+  };
+  const handleMouseLeave = () => {
+    setSelectedImage(null); // Reset selectedImage to null on mouse leave
+  };
+
   return (
     <Fragment>
       {loading ? (
@@ -107,7 +129,8 @@ const ProductDetails = ({ match }) => {
         <Fragment>
             <MetaData title={`${product.name} -- ARF MART`} />
           <div className="ProductDetails">
-            <div>
+              <div className="container">
+
               <Carousel>
                   {product.images &&
                     product.images.map((item, i) => (
@@ -119,7 +142,45 @@ const ProductDetails = ({ match }) => {
                     />
                   ))}
               </Carousel>
+                <div className="image-grid"
+
+                >
+                  {product.images &&
+                    product.images.map((item, i) => (
+                      <div
+                        className="grid-image-container"
+                        key={i}
+                        onClick={() => handleImageClick(i)}
+                      >
+                        <img
+                          className="grid-image"
+                          src={item.url}
+                          alt={`Grid Image ${i}`}
+                        />
+                      </div>
+                    ))}
+                  {selectedImage !== null && (
+                    <div className="magnified-image" onMouseLeave={handleMouseLeave}>
+                      <ReactImageMagnify
+                        {...{
+                          smallImage: {
+                            alt: 'Magnified Image',
+                            isFluidWidth: true,
+                            src: product.images[selectedImage].url,
+                          },
+                          largeImage: {
+                            src: product.images[selectedImage].url,
+                            width: 800,
+                            height: 600,
+                          },
+                          enlargedImagePosition: 'over',
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
             </div>
+
 
             <div>
               <div className="detailsBlock-1">
@@ -145,7 +206,7 @@ const ProductDetails = ({ match }) => {
                       disabled={product.Stock < 1 ? true : false}
                     onClick={addToCartHandler}
                   >
-                    Add to Cart
+                      <BsFillHandbagFill style={{ marginRight: '5px' }} />  Add to Cart
                     </button>
                 </div>
 
@@ -156,10 +217,35 @@ const ProductDetails = ({ match }) => {
                   </b>
                 </p>
               </div>
+                <div class="payment-offers-container single-child">
+
+                  <div class="payment_offers">
+                    <div class="offer_text">
+                      <span>₹15 off on All UPI Payments</span>
+                    </div>
+                    <div class="payment_icons">
+                      <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/paytm_icon_fa75a315-11a2-4c8e-a241-18af809eb683.svg?v=1682575951" class="single_payment_icon paytm_icon" />
+                      <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/gpay_icon_503ebbda-a3e1-4659-af32-0686aecec227.svg?v=1682575951" class="single_payment_icon gpay_icon" />
+                      <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/phone_pe_icon_f9872d32-f8cf-43ca-8fa2-78db125fcdad.svg?v=1682575951" class="single_payment_icon phonepe_icon" />
+                    </div>
+                  </div>
+
+
+                </div>
 
               <div className="detailsBlock-4">
-                  Description : <p>{product.description}</p>
+                  <span>Description:</span>
+                  {displayedDescription.map((line, index) => (
+                    <p key={index}>{line}</p>
+                  ))}
+                  {descriptionLines.length > 3 && !showFullDescription && (
+                    <button className="read-more-button" onClick={() => setShowFullDescription(true)}>Read More</button>
+                  )}
+                  {showFullDescription && (
+                    <button className="read-less-button" onClick={() => setShowFullDescription(false)}>Read Less</button>
+                  )}
               </div>
+
 
               <button onClick={submitReviewToggle} className="submitReview">
                 Submit Review

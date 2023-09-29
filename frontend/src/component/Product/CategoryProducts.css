@@ -1,0 +1,31 @@
+/* Add this CSS to your component's CSS file or a global stylesheet */
+
+/* Container for the products */
+h1 {
+    margin-top: 80px;
+    margin-left: 22px;
+
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Prevent products from wrapping to the next line */
+    overflow-x: auto;
+    margin-top: 10px;
+    /* Enable horizontal scrolling if needed */
+}
+
+/* Individual product card */
+.product-card {
+    flex: 0 0 auto;
+    /* Allow products to grow and shrink */
+    margin-right: 5px;
+    /* Adjust the spacing between products */
+    /* Add any other styling for your product card here */
+}
+
+/* Optional: Hide horizontal scrollbar */
+.product-container::-webkit-scrollbar {
+    display: none;
+}

@@ -264,3 +264,23 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
     success: true,
   });
 });
+
+
+exports.getByCategory = catchAsyncErrors(async (req, res, next) => {
+  try {
+    const category = req.params.category;
+
+    // Fetch products that belong to the specified category
+    const products = await Product.find({ category });
+
+    res.status(200).json({
+      success: true,
+      products,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: 'Internal Server Error',
+    });
+  }
+})

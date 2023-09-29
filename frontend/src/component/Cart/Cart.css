@@ -10,7 +10,7 @@
 }
 .emptyCart > svg {
   font-size: 5vmax;
-  color: tomato;
+  color: rgb(128, 128, 128);
 }
 .emptyCart > p {
   font-size: 2vmax;
@@ -31,7 +31,7 @@
 }
 
 .cartHeader {
-  background-color: #4287f5;
+  background-color: #000102;
   width: 90%;
   box-sizing: border-box;
   margin: auto;
@@ -42,6 +42,7 @@
 }
 .cartHeader > p {
   margin: 10px;
+  font-size: large;
 }
 .cartHeader > p:last-child {
   text-align: end;
@@ -69,7 +70,7 @@
   transition: all 0.5s;
 }
 .cartInput > button:hover {
-  background-color: rgba(0, 0, 0, 0.767);
+  background-color: rgba(124, 122, 122, 0.767);
 }
 
 .cartInput > input {
@@ -99,7 +100,7 @@
 }
 
 .cartGrossProfitBox {
-  border-top: 3px solid tomato;
+  border-top: 3px solid rgb(4, 1, 1);
   margin: 1vmax 4vmax;
   box-sizing: border-box;
   padding: 2vmax 0;
@@ -111,17 +112,22 @@
 .checkOutBtn {
   display: flex;
   justify-content: flex-end;
+  
 }
 .checkOutBtn > button {
-  background-color: #4287f5;
+  background-color: #000102;
   color: white;
   border: none;
   padding: 0.8vmax 4vmax;
-  width: 50%;
-  font: 300 0.8vmax "Roboto";
+  width: 100%;
+  
+    font: 300 1vmax "Roboto";
   margin: 1vmax 4vmax;
   cursor: pointer;
   border-radius: 30px;
+}
+.checkOutBtn>button:hover {
+  background-color: rgba(124, 122, 122, 0.767);
 }
 
 @media screen and (max-width: 600px) {

@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 .CartItemCard > img {
-  width: 5vmax;
+  width: 8vmax;
 }
 
 .CartItemCard > div {
@@ -28,10 +28,15 @@
 
 .CartItemCard > div > p {
   color: tomato;
+  
   font: 100 0.8vmax "Roboto";
   cursor: pointer;
 }
 
+.remove-cart-icon {
+  color: red;
+
+}
 @media screen and (max-width: 600px) {
   .CartItemCard {
     padding: 3vmax;

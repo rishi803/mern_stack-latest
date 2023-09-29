@@ -107,6 +107,7 @@ const LoginSignUp = ({ history, location }) => {
         <Loader />
       ) : (
         <Fragment>
+
           <div className="LoginSignUpContainer">
             <div className="LoginSignUpBox">
               <div>

@@ -3,10 +3,18 @@
   width: 15vw;
   border-bottom: 1px solid rgba(0, 0, 0, 0.171);
   padding: 2vmax;
-  color: rgba(0, 0, 0, 0.678);
-  font: 500 1.5vmax "Roboto";
+  color: #333;
+    /* Darker color for better readability */
+    font: 500 1.5vmax "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    /* Change the font */
   text-align: center;
   margin-top: 50px;
+  letter-spacing: 1px;
+    /* Add letter-spacing for a more spaced-out look */
+    text-transform: uppercase;
+    /* Convert text to uppercase */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    /* Add a subtle text shadow */
 }
 
 .products {
@@ -15,6 +23,7 @@
   padding: 0 5vmax;
   justify-content: center;
   min-height: 30vh;
+  margin-right: 30px;
 }
 
 .paginationBox {
@@ -60,7 +69,7 @@
 }
 
 .pageItemActive {
-  background-color: rgb(71, 102, 255);
+  background-color: rgb(2, 4, 12);
 }
 
 .pageLinkActive {
@@ -68,10 +77,12 @@
 }
 
 .filterBox {
+  margin-top: 100px;
   width: 10vmax;
   position: absolute;
   top: 10vmax;
   left: 4vmax;
+  margin-right: 0px;
 }
 
 .categoryBox {
@@ -81,7 +92,7 @@
 .category-link {
   list-style: none;
   color: rgba(0, 0, 0, 0.61);
-  font: 400 0.8vmax "Roboto";
+  font: 1000 1.0vmax "Roboto";
   margin: 0.4vmax;
   cursor: pointer;
   transition: all 0.5s;

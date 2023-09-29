@@ -44,6 +44,7 @@ import About from "./component/layout/About/About";
 import NotFound from "./component/layout/Not Found/NotFound";
 import Chat from "./component/Home/Chat";
 import Navbar from "./component/layout/Header/Navbar";
+import CategoryProducts from "./component/Product/CategoryProducts";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -88,6 +89,7 @@ function App() {
         <Route exact path="/product/:id" component={ProductDetails} />
         <Route exact path="/products" component={Products} />
         <Route path="/products/:keyword" component={Products} />
+        <Route path="/category/:category" component={CategoryProducts} />
 
         <Route exact path="/search" component={Search} />
 

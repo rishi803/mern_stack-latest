@@ -4,7 +4,8 @@ import { MdAccountCircle, MdAddShoppingCart, MdSearch, MdMenu, MdClose } from "r
 import "./mix.css";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import { NavLink } from "react-router-dom";
+import { AiOutlineHome } from "react-icons/ai"
 const Navbar = ({ user }) => {
     const { cartItems } = useSelector((state) => state.cart);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,35 +39,32 @@ const Navbar = ({ user }) => {
             </div>
             <ul className={`custom-nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
                 <li className="custom-nav-item">
-                    <a href="/">Home</a>
+                    <NavLink exact to="/" activeClassName="active-link">
+                        <AiOutlineHome />
+                    </NavLink>
                 </li>
                 <li className="custom-nav-item">
-                    <a href="/products">Products</a>
+                    <NavLink to="/products" activeClassName="active-link">
+                        Best Deals
+                    </NavLink>
                 </li>
-                <li className="custom-nav-item">
-                    <a href="/contact">Contact</a>
-                </li>
-                <li className="custom-nav-item">
-                    <a href="/about">About</a>
-                </li>
+
             </ul>
 
-            <div className={`custom-search-bar mobile-open ${showSearch ? "show-search" : ""}`}>
-                {!showSearch ? (
-                    <MdSearch className="custom-search-icon" onClick={toggleSearch} />
-                ) : <MdClose className="custom-search-icon" onClick={toggleSearch} />}
-                {showSearch && (
-                    <form onSubmit={searchSubmitHandler}>
+
+            <div className="custom-search-bar">
+                <form onSubmit={searchSubmitHandler} className="search-form">
+                    <div className="search-input-container">
                         <input
                             type="text"
                             placeholder="Search a Product ..."
                             onChange={(e) => setKeyword(e.target.value)}
                         />
-                        <button type="submit">
-                            <MdSearch className="custom-search-icon" />
-                        </button>
-                    </form>
-                )}
+                    </div>
+                    <button type="submit">
+                        <MdSearch className="custom-search-icon" />
+                    </button>
+                </form>
             </div>
 
 
