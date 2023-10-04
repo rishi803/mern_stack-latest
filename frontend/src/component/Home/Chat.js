@@ -21,7 +21,7 @@ const Chat = () => {
     }, []);
 
     return (
-        <div></div>
+        <div className='root'></div>
     );
 }
 

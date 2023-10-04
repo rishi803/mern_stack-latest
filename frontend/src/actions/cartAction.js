@@ -1,5 +1,7 @@
 import {
   ADD_TO_CART,
+  CLEAR_CART_ON_LOGOUT,
+  LOAD_CART_ITEMS,
   REMOVE_CART_ITEM,
   SAVE_SHIPPING_INFO,
   UPDATE_ORDER_HISTORY,
@@ -88,4 +90,44 @@ export const saveShippingInfo = (data) => async (dispatch) => {
   });
 
   localStorage.setItem("shippingInfo", JSON.stringify(data));
+};
+
+//LoadCartItems
+export const loadCartItems = (isAuthenticated) => (dispatch, getState) => {
+
+  try {
+    let cartItems = [];
+    if (isAuthenticated) {
+      // Load cart items from local storage only if the user is authenticated
+      const storedCartItems = localStorage.getItem("cartItems");
+      if (storedCartItems) {
+        cartItems = JSON.parse(storedCartItems);
+      }
+      else {
+        // Initialize an empty cart for a new user
+        cartItems = [];
+      }
+    }
+    dispatch({
+      type: LOAD_CART_ITEMS,
+      payload: { cartItems, isAuthenticated },
+    });
+  } catch (error) {
+    // Handle any potential error here
+  }
+};
+
+
+export const clearCartOnLogout = () => (dispatch) => {
+  try {
+
+
+    dispatch({
+
+      type: CLEAR_CART_ON_LOGOUT,
+    });
+
+  } catch (error) {
+    // Handle any potential error here
+  }
 };

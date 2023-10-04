@@ -8,6 +8,7 @@ import FaceIcon from "@material-ui/icons/Face";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, login, register } from "../../actions/userAction";
 import { useAlert } from "react-alert";
+import { loadCartItems } from "../../actions/cartAction";
 
 const LoginSignUp = ({ history, location }) => {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ const LoginSignUp = ({ history, location }) => {
   const loginSubmit = (e) => {
     e.preventDefault();
     dispatch(login(loginEmail, loginPassword));
+    dispatch(loadCartItems(isAuthenticated));
   };
 
   const registerSubmit = (e) => {

@@ -67,31 +67,32 @@ const Home = ({ match }) => {
         <Fragment>
             <MetaData title="ARF-MART" />
 
-            <div className="container-flex">
-              <div className="filterBox-f">
-                <ul className="categoryBox-f">
+            <div className="container-flex1">
+              <div className="filterBox-f1">
+                <div className="categoryBox-f1">
                   {categories.map((category, index) => (
-                    <li
-                      className="category-card"
+                    <div
+                      className="category-card1"
                       key={category}
                       onClick={() => handleCategoryClick(category)}
                     >
                       {/* Use NavLink for each category */}
-                      <NavLink to={`/category/${category}`} activeClassName="active" className="nav-link">
-                        <div className="category-image">
+                      <NavLink to={`/category/${category}`} activeClassName="active" className="nav-link1">
+                        <div className="category-image1">
                           <img
                             src={categoryImages[index]}
                             alt={category}
-                            className="category-img"
+                            className="category-img1"
                           />
                         </div>
-                        <span className="category-text">{category}</span>
+                        <span className="category-text1">{category}</span>
                       </NavLink>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
+
 
             {selectedCategory ? (
               <Fragment>

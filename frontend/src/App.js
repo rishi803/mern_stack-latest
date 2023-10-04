@@ -186,8 +186,8 @@ function App() {
         />
 
         <Route
-          component={
-            window.location.pathname === "/process/payment" ? null : NotFound
+          render={({ location }) =>
+            location.pathname === "/process/payment" ? null : <NotFound />
           }
         />
       </Switch>

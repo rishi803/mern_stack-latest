@@ -11,6 +11,7 @@ import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { logout } from "../../../actions/userAction";
 import { useDispatch, useSelector } from "react-redux";
+import { clearCartOnLogout } from "../../../actions/cartAction";
 
 const UserOptions = ({ user }) => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -57,7 +58,10 @@ const UserOptions = ({ user }) => {
   }
   function logoutUser() {
     dispatch(logout());
+    dispatch(clearCartOnLogout());
     alert.success("Logout Successfully");
+
+
   }
 
   return (

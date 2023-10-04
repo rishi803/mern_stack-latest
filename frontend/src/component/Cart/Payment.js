@@ -18,6 +18,7 @@ import CreditCardIcon from "@material-ui/icons/CreditCard";
 import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { createOrder, clearErrors } from "../../actions/orderAction";
+import { getProductDetails } from "../../actions/productAction";
 
 const Payment = ({ history }) => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
@@ -32,8 +33,10 @@ const Payment = ({ history }) => {
   const { user } = useSelector((state) => state.user);
   const { error } = useSelector((state) => state.newOrder);
 
+
   const paymentData = {
     amount: Math.round(orderInfo.totalPrice * 100),
+    productId: "",
   };
 
   const order = {

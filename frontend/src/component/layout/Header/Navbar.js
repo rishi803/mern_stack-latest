@@ -69,12 +69,17 @@ const Navbar = ({ user }) => {
 
 
             <div className={`custom-icons ${isMobileMenuOpen ? "mobile-open" : ""}`}>
-                {user ? (
-                    <span className="custom-username">{user.name}</span>
+                {user && user.avatar && user.avatar.url ? (
+                    <img
+                        className="speedDialIcon"
+                        src={user.avatar.url}
+                        alt="Profile"
+                    />
 
                 ) : (
                     <a href="/login" className="custom-nav-item">
                         <MdAccountCircle />
+
                     </a>
                 )}
                 <a href="/cart" className="custom-nav-item">

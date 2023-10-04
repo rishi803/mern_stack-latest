@@ -3,7 +3,7 @@ const ErrorHander = require("../utils/errorhander");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const ApiFeatures = require("../utils/apifeatures");
 const cloudinary = require("cloudinary");
-
+const Purchase = require('../models/purchaseModel');
 // Create Product -- Admin
 exports.createProduct = catchAsyncErrors(async (req, res, next) => {
   let images = [];
@@ -166,8 +166,18 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
   const { rating, comment, productId } = req.body;
 
+  const userId = req.user._id;
+  console.log(productId);
+  // Check if the user has purchased the product
+  const hasPurchased = await Purchase.exists({ user: userId, product: productId });
+
+  console.log(hasPurchased);
+  if (!hasPurchased) {
+    return res.status(403).json({ error: "You can only review products you have purchased." });
+  }
+
   const review = {
-    user: req.user._id,
+    user: userId,
     name: req.user.name,
     rating: Number(rating),
     comment,
@@ -176,13 +186,15 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(productId);
 
   const isReviewed = product.reviews.find(
-    (rev) => rev.user.toString() === req.user._id.toString()
+    (rev) => rev.user.toString() === userId.toString()
   );
 
   if (isReviewed) {
     product.reviews.forEach((rev) => {
-      if (rev.user.toString() === req.user._id.toString())
-        (rev.rating = rating), (rev.comment = comment);
+      if (rev.user.toString() === userId.toString()) {
+        rev.rating = rating;
+        rev.comment = comment;
+      }
     });
   } else {
     product.reviews.push(review);

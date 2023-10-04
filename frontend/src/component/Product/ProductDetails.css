@@ -19,7 +19,7 @@
   align-items: center;
   padding: 2vmax;
   box-sizing: border-box;
-/* border: 1px solid white;*/
+  /* border: 1px solid white;*/
 }
 
 .ProductDetails>div:last-child {
@@ -29,63 +29,63 @@
 /* Carousel Image */
 .CarouselImage {
   width: 100%;
-    height: 500px;
+  height: 500px;
     object-fit: cover;
     box-sizing: border-box;
-      border: 1px solid rgba(0, 0, 0, 0.267);
-      border-radius: 4px;
-      animation: fadeIn 1s ease-in-out;
-    }
-    
-    .container {
-      display: flex;
-      align-items: flex-start;
-    
-      /* Adjust alignment as needed */
-    }
-    
-    
-    .image-grid {
-      margin-top: 10px;
-      display: grid;
-      flex: 1;
-      display: flex;
-      flex-wrap: nowrap;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      /* Adjust the column size as needed */
-      gap: 10px;
-      /* Adjust the gap between images as needed */
-      overflow-x: auto;
-      /* Add horizontal scrolling if necessary */
-      white-space: nowrap;
-    
-    
-    }
-    
-    .image-grid::-webkit-scrollbar {
-      width: 2px;
-    }
-    
-    /* Handle (thumb) for the scrollbar */
-    .image-grid::-webkit-scrollbar-thumb {
-    
-      border-radius: 4px;
-    }
-    
-    /* Handle on hover */
-    .image-grid::-webkit-scrollbar-thumb:hover {}
-    
-    .grid-image.selected {
-      border: 2px solid #007bff;
-      /* Change the border style as needed */
-    }
-      
-            .carousel-container {
-              flex: 1;
-              /* You can add additional styling for the carousel container here */
-              margin-left: 20px;
-              /* Adjust the margin as needed to separate grid and carousel */
-            }
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .container {
+    display: flex;
+    align-items: flex-start;
+  
+    /* Adjust alignment as needed */
+  }
+  
+  
+  .image-grid {
+    margin-top: 10px;
+    display: grid;
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    /* Adjust the column size as needed */
+    gap: 10px;
+    /* Adjust the gap between images as needed */
+    overflow-x: auto;
+    /* Add horizontal scrolling if necessary */
+    white-space: nowrap;
+  
+  
+  }
+  
+  .image-grid::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Handle (thumb) for the scrollbar */
+  .image-grid::-webkit-scrollbar-thumb {
+  
+    border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  .image-grid::-webkit-scrollbar-thumb:hover {}
+  
+  .grid-image.selected {
+    border: 2px solid #007bff;
+    /* Change the border style as needed */
+  }
+  
+  .carousel-container {
+    flex: 1;
+    /* You can add additional styling for the carousel container here */
+    margin-left: 20px;
+    /* Adjust the margin as needed to separate grid and carousel */
+  }
 
 .grid-image {
   max-width: 100%;
@@ -97,7 +97,7 @@
   height: auto;
 
   object-fit: cover;
-    border: 1px solid black;
+  border: 1px solid black;
   
   }
   
@@ -138,6 +138,7 @@
   font: 400 1.8vmax "Franklin Gothic Medium";
   margin: 1vmax 0;
 }
+
 /* Details Block 3-1 */
 .detailsBlock-3-1 {
   display: flex;
@@ -152,6 +153,7 @@
   color: white;
   transition: all 0.5s;
 }
+
 .detailsBlock-3-1-1>button:hover {
   background-color: rgba(0, 0, 0, 0.767);
 }
@@ -179,14 +181,14 @@
   outline: none;
   display: flex;
   align-items: center;
-    justify-content: center;
+  justify-content: center;
   font-size: 1.2vmax;
-    margin-right: 0.5vmax;
+  margin-right: 0.5vmax;
   }
   
   .detailsBlock-3-1>button:last-child:hover {
     background-color: rgb(116, 115, 114);
-      transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /* ButtonStyle */
@@ -276,7 +278,7 @@
 .detailsBlock-4>p {
   border-top: 1px solid rgba(0, 0, 0, 0.205);
   border-bottom: 1px solid rgba(0, 0, 0, 0.205);
-    padding: 1vmax 0;
+  padding: 1vmax 0;
     color: rgba(0, 0, 0, 0.651);
     font: 400 1vmax "Roboto";
     margin: 1vmax 0;
@@ -331,7 +333,7 @@
   outline: none;
   animation: fadeIn 1s ease-in-out;
   display: flex;
-    align-items: center;
+  align-items: center;
 }
 
 .submitReview:hover {
@@ -344,6 +346,7 @@
   font-size: 1.5vmax;
   margin-right: 0.5vmax;
 }
+
 /* Submit Dialog */
 .submitDialog {
   display: flex;
@@ -389,13 +392,13 @@
   margin: 1vmax;
   padding: 2vmax;
   /* Decreased padding */
-    animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .reviewCard>img {
   width: 4vmax;
   /* Decreased image width */
-    height: 4vmax;
+  height: 4vmax;
     /* Added image height */
     object-fit: cover;
     border-radius: 50%;
@@ -406,7 +409,7 @@
   color: rgba(0, 0, 0, 0.836);
   font: 500 1vmax "Roboto";
   /* Adjusted font size */
-    text-align: center;
+  text-align: center;
     margin-top: 1vmax;
     /* Added margin-top */
 }
@@ -415,7 +418,7 @@
   color: rgba(0, 0, 0, 0.445);
   font: 400 0.8vmax cursive;
   /* Adjusted font size and weight */
-    text-align: center;
+  text-align: center;
     margin-top: 1vmax;
     /* Added margin-top */
 }
@@ -448,23 +451,25 @@
     opacity: 1;
   }
 }
+
 /* Media Queries */
 @media screen and (max-width: 600px) {
   .ProductDetails {
     flex-direction: column;
     height: unset;
+    margin-top: 50px;
   }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .ProductDetails>div:last-child {
+    .ProductDetails>div:last-child {
     align-items: center;
   }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .detailsBlock-1>h2 {
+    .detailsBlock-1>h2 {
     font-size: 2.8vmax;
     text-align: center;
   }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .detailsBlock-1>p {
+    .detailsBlock-1>p {
     text-align: center;
     font-size: 1vmax;
   }
@@ -472,11 +477,12 @@
   .detailsBlock-2 {
     justify-content: center;
   }
-.detailsBlock-2>span {
+
+    .detailsBlock-2>span {
     font-size: 1.5vmax;
   }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .detailsBlock-3>h1 {
+    .detailsBlock-3>h1 {
     font: 700 3vmax "Franklin Gothic Medium";
     text-align: center;
   }
@@ -488,18 +494,19 @@
   .detailsBlock-3-1-1 {
     padding: 2vmax 0;
   }
-.detailsBlock-3-1-1>button {
+
+    .detailsBlock-3-1-1>button {
     padding: 1.2vmax;
     width: 4vmax;
   }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .detailsBlock-3-1-1>input {
+    .detailsBlock-3-1-1>input {
     padding: 1.5vmax;
     width: 3vmax;
     font: 400 1.8vmax "Roboto";
   }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .detailsBlock-3-1>button:last-child {
+    .detailsBlock-3-1>button:last-child {
     font: 500 1.7vmax "Roboto";
     padding: 1.5vmax;
     width: 20vmax;
@@ -512,7 +519,8 @@
       width: 20vmax;
       margin: 3vmax 0;
     }
-.detailsBlock-3>p {
+
+    .detailsBlock-3>p {
     padding: 2.5vmax 0;
     text-align: center;
     font: 400 2vmax "Roboto";
@@ -522,7 +530,7 @@
     font: 500 2.5vmax sans-serif;
   }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .detailsBlock-4>p {
+    .detailsBlock-4>p {
     font: 300 1.8vmax sans-serif;
   }
 
@@ -533,7 +541,7 @@
     margin: 3vmax 0;
   }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .reviewCard>p {
+    .reviewCard>p {
     font: 600 3vw "Roboto";
   }
 

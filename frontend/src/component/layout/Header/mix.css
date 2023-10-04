@@ -7,7 +7,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 500;
     flex-wrap: wrap;
     gap: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -137,27 +137,44 @@
 
 /* Responsive styles for mobile */
 /* Responsive styles for mobile */
-@media screen and (max-width: 600px) {
+/* Responsive styles for mobile */
+@media screen and (max-width: 767px) {
     .custom-menu-toggle {
         display: block;
     }
 
         .custom-navbar {
-            padding: 10px 20px;
+        padding: 35px 40px;
+            height: 20px;
             /* Increase padding for better mobile readability */
         }
+.custom-icons .speedDialIcon {
+    width: 30px;
+    height: 40px;
+    border-radius: 100%;
+}
     .custom-search-bar {
-        position: relative;
-            top: 30px;
-            right: 15%;
+        position: absolute;
+            top: 15px;
+            left: 55%;
+            /* Center the search bar horizontally */
+            transform: translateX(-50%);
+            /* Center the search bar horizontally */
+            display: flex;
+            align-items: center;
         }
 
+        .custom-search-bar input[type="text"] {
+            flex: 1;
+            padding: 5px;
+            /* Adjust padding for better mobile appearance */
+        }
 
-
-        .custom-username {
-            margin-right: 10px;
-            /* Add margin to separate the username from the search bar */
+        .custom-search-bar button[type="submit"] {
+            padding: 5px 5px;
+            /* Adjust the padding for smaller screens */
     }
+
 
     .custom-nav-links {
         display: none;
@@ -170,12 +187,11 @@
         text-align: center;
         z-index: 1;
         padding: 10px 0;
-            /* Add padding to separate links */
+        /* Add padding to separate links */
         }
         
         .custom-nav-item {
-        
-            margin: 15px 30px;
+        margin: 15px 0;
             /* Add margin to separate individual links */
     }
 
@@ -183,10 +199,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    .mobile-open .custom-search-bar {
-        display: block;
     }
 
     .mobile-open .custom-icons {
@@ -198,13 +210,15 @@
         /* Change icon color to black */
     }
 
-    .custom-search-bar button[type="submit"] {
-        padding: 10px;
-        /* Adjust the padding for smaller screens */
-    }
-
     .custom-search-icon {
         margin-right: 10px;
+
     }
 
+        .custom-logo-img {
+            position: relative;
+            top: -30px;
+            /* Adjust the vertical position */
+            left: -50px;
+        }
 }

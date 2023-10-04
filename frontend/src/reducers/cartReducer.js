@@ -3,10 +3,12 @@ import {
   REMOVE_CART_ITEM,
   SAVE_SHIPPING_INFO,
   UPDATE_ORDER_HISTORY,
+  LOAD_CART_ITEMS,
+  CLEAR_CART_ON_LOGOUT,
 } from "../constants/cartConstants";
 
 export const cartReducer = (
-  state = { cartItems: [], shippingInfo: {}, orderHistory: [] },
+  state = { cartItems: [], shippingInfo: {}, orderHistory: [], isAuthenticated: false },
   action
 ) => {
   switch (action.type) {
@@ -47,6 +49,18 @@ export const cartReducer = (
       return {
         ...state,
         orderHistory: [...state.orderHistory, action.payload],
+      };
+    case LOAD_CART_ITEMS:
+      const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      return {
+        ...state,
+        cartItems: storedCartItems,
+      };
+    case CLEAR_CART_ON_LOGOUT:
+      return {
+        ...state,
+        cartItems: [],
+        isAuthenticated: false
       };
 
     default:

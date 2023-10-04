@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCategoryProducts } from '../../actions/productAction';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductCard from '../Home/ProductCard';
 import './CategoryProducts.css'; // Import the CSS file
+import Loader from '../layout/Loader/Loader';
 
 function CategoryProducts() {
     const { products, loading, error } = useSelector((state) => state.categoryProducts);
@@ -16,21 +17,29 @@ function CategoryProducts() {
     }, [dispatch, category]);
 
     return (
-        <div>
+        <Fragment>
+            {loading ? (
+                <Loader />
+            ) : (
+                    <div>
             <h1>Products in {category}</h1>
 
-            <div className="product-container"> {/* Apply the product container class */}
-                {products && products.length > 0 ? (
-                    products.map((product) => (
-                        <div key={product._id} className="product-card"> {/* Apply the product card class */}
-                            <ProductCard product={product} />
-                        </div>
-                    ))
-                ) : (
-                    <p>No products found.</p>
-                )}
+                        <div className="product-container">
+
+                            {products && products.length > 0 ? (
+                                products.map((product) => (
+                                    <div key={product._id} className="product-card">
+
+                                        <ProductCard product={product} />
+                                    </div>
+                                ))
+                            ) : (
+                                <p>No products found.</p>
+                            )}
             </div>
-        </div>
+                    </div>
+            )}
+        </Fragment>
     );
 }
 

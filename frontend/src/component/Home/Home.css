@@ -1,6 +1,6 @@
 .banner {
     background-position: center;
-        background-repeat: no-repeat;
+    background-repeat: no-repeat;
         background-size: cover;
         height: 100vmin;
         display: flex;
@@ -24,14 +24,14 @@
 
 .banner p {
     margin-bottom: 1rem;
-        opacity: 0;
+    opacity: 0;
         transform: translateY(50px);
         animation: slideIn 1s forwards;
 }
 
 .banner>a>button {
     margin-bottom: 5vmax;
-        cursor: pointer;
+    cursor: pointer;
         background-color: white;
         border: 1px solid white;
         border-radius: 0;
@@ -43,12 +43,12 @@
 
 .banner>a>button:hover {
     background-color: rgba(255, 255, 255, 0);
-        color: white;
+    color: white;
 }
 
 .banner::after {
     content: "";
-        width: 100vw;
+    width: 100vw;
         height: 100vmin;
         background-color: #ffffff;
         position: absolute;
@@ -60,7 +60,7 @@
 
 .homeHeading {
     text-align: center;
-        font-family: Roboto;
+    font-family: Roboto;
         font-size: 1.4vmax;
         border-bottom: 1px solid rgba(21, 21, 21, 0.5);
         width: 20vmax;
@@ -72,7 +72,7 @@
 .container {
     display: flex;
     margin: 2vmax auto;
-        width: 80vw;
+    width: 80vw;
         flex-wrap: wrap;
         justify-content: center;
         max-width: 100%;
@@ -80,7 +80,7 @@
 
 .productCard {
     width: 200px;
-        /* Set a fixed width for all product cards */
+    /* Set a fixed width for all product cards */
         display: flex;
         flex-direction: column;
         text-decoration: none;
@@ -89,16 +89,16 @@
         transition: all 0.5s;
         padding-bottom: 0.5vmax;
         border: 1px solid rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        
-            box-shadow: 0 0 5px rgba(195, 194, 194, 0.26);
-            overflow: hidden;
-            box-sizing: border-box;
+        border-radius: 10px;
+    
+        box-shadow: 0 0 5px rgba(195, 194, 194, 0.26);
+        overflow: hidden;
+        box-sizing: border-box;
 }
+
 .productCard>img {
     width: 100%;
-    
-        height: auto;
+    height: auto;
     
         max-height: 14vmax;
     
@@ -118,21 +118,21 @@
 
 .productCard>div {
     margin: 0.5vmax;
-        display: flex;
+    display: flex;
         justify-content: flex-start;
         align-items: center;
 }
 
 .productCardSpan {
     margin: 0.5vmax;
-        font: 300 0.7vmax "Roboto";
+    font: 300 0.7vmax "Roboto";
 }
 
 
 
 .productCard>span {
     margin: 0.5vmax;
-        color: tomato;
+    color: tomato;
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
         font-size: 1vmax;
 }
@@ -143,18 +143,18 @@
     transform: translateY(-1vmax);
 }
 
-.container-flex {
+.container-flex1 {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 90px;
 }
 
-.filterBox-f {
+.filterBox-f1 {
     display: flex;
 }
 
-.categoryBox-f {
+.categoryBox-f1 {
     list-style: none;
     padding: 0;
     display: flex;
@@ -163,7 +163,7 @@
 
 }
 
-.category-card {
+.category-card1 {
     width: 140px;
 
 
@@ -183,11 +183,11 @@
 
 }
 
-.category-image {
+.category-image1 {
     margin-bottom: 5px;
 }
 
-.category-img {
+.category-img1 {
     width: 80px;
     height: 80px;
     object-fit: cover;
@@ -198,66 +198,67 @@
     font-size: 14px;
 }
 
-.nav-link {
+.nav-link1 {
     text-decoration: none;
 }
 
 
 
 /* Media query for screens with a maximum width of 600px (typical mobile screens) */
-@media screen and (max-width: 600px) {
-.container-flex,
-    .categoryBox-f {
-        max-height: 300px;
-        /* Adjust max-height as needed */
-        overflow-y: scroll;
-        margin-top: 70px;
-        /* Enable vertical scrolling if needed */
+@media screen and (max-width: 500px) {
+
+    /* Styles for mobile devices go here */
+    .banner {
+        height: 70vmin;
+        /* Adjust banner height for better mobile display */
     }
 
-    .category-card {
-
-        width: 90px;
-        /* Reduce width for mobile */
-        max-height: 200px;
-        /* Remove max-height for mobile */
-
-        /* Allow cards to expand based on content */
-
+        .banner>h1 {
+            font-size: 2vmax;
+            /* Adjust font size for mobile */
+            margin: 2vmax;
+            /* Adjust margin for mobile */
     }
 
-    .category-text {
-        font-size: 14px;
-        margin-top: 5px;
+        .banner>p {
+            font-size: 1.2vmax;
+            /* Adjust font size for mobile */
     }
 
-    .homeHeading {
-        margin-top: 10px;
+        .banner>a>button {
+            margin-bottom: 2vmax;
+            /* Reduce margin for mobile */
+            padding: 0.8vmax 1.5vmax;
+            /* Adjust padding for mobile */
     }
+
 
     .container {
-        max-height: 300px;
-        /* Adjust max-height as needed */
-        overflow-y: scroll;
-        /* Enable vertical scrolling if needed */
+        margin-top: 2vmax;
+            /* Adjust margin for mobile */
     }
+.productCard {
+    width: 100%;
+    /* Cards take full width on mobile */
+    margin: 2vmax 0;
+    /* Adjust margin for mobile */
+    padding: 1vmax;
+    /* Adjust padding for mobile */
+}
+
         .productCard>p {
-            font-size: 1.7vmax;
+            font-size: 1.2vmax;
+            /* Adjust font size for mobile */
+            margin: 1vmax 0.5vmax;
+            /* Adjust margin for mobile */
         }
 
-        .productCard>span {
-            font-size: 1.5vmax;
-        }
 
-        .productCard>div>span {
-            margin: 0 0.5vmax;
-            font: 300 1vmax "Roboto";
-        }
 }
 
 @keyframes slideIn {
     0% {
-            opacity: 0;
+        opacity: 0;
             transform: translateY(50px);
         }
 
@@ -265,4 +266,115 @@
             opacity: 1;
             transform: translateY(0);
         }
+}
+/* Styles for desktop screens */
+@media (min-width: 768px) {
+    .container-flex1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 90px;
+    }
+
+    .filterBox-f1 {
+        display: flex;
+        gap: 20px;
+    }
+
+    .categoryBox-f1 {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .category-card1 {
+        width: 140px;
+        background-color: #f1f1f1;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .category-image1 {
+        margin-bottom: 5px;
+    }
+
+    .category-img1 {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+
+    .category-text1 {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Styles for mobile screens */
+@media (max-width: 767px) {
+    .container-flex1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 110px;
+        margin-bottom: 10px;
+    }
+
+    .filterBox-f1 {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+    .categoryBox-f1 {
+        list-style: none;
+        padding: 0;
+        display: flex;
+    }
+
+    .category-card1 {
+        width: 140px;
+        background-color: #f1f1f1;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        margin-right: 20px;
+    }
+
+    .category-image1 {
+        margin-bottom: 5px;
+    }
+
+    .category-img1 {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+
+    .category-text1 {
+        margin-top: 10px;
+        font-size: 14px;
+    }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
 import "../Home/Banner.css";
+import { NavLink } from 'react-router-dom';
 
 const data = [
     "https://sparepartsonline.in/wp-content/uploads/2018/08/mobile-phone-accessories-banner.jpg",
@@ -12,7 +13,13 @@ const data = [
 
 ]
 
-// console.log(data);
+const imageLinks = [
+    "/category/SmartPhones",
+    "/category/Fashion",
+    "/category/Fashion",
+    "/category/Electronics",
+    "/category/Electronics",
+];
 
 const Banner = () => {
     return (
@@ -39,9 +46,9 @@ const Banner = () => {
                 {
                     data.map((imag, i) => {
                         return (
-                            <>
-                                <img src={imag} alt="img" key={i} className="banner_img" />
-                            </>
+                            <NavLink to={imageLinks[i]} key={i}>
+                                <img src={imag} alt={`img-${i}`} className="banner_img" />
+                            </NavLink>
                         )
                     })
                 }
