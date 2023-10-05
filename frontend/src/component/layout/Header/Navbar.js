@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../../images/logo2.png";
 import { MdAccountCircle, MdAddShoppingCart, MdSearch, MdMenu, MdClose } from "react-icons/md";
-import "./mix.css";
+import "./Navbar.css";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
@@ -53,12 +53,13 @@ const Navbar = ({ user }) => {
 
 
             <div className="custom-search-bar">
-                <form onSubmit={searchSubmitHandler} className="search-form">
+                <form onSubmit={searchSubmitHandler} className="search-form" style={{ width: "100%" }}>
                     <div className="search-input-container">
                         <input
                             type="text"
                             placeholder="Search a Product ..."
                             onChange={(e) => setKeyword(e.target.value)}
+                            style={{ width: "100%" }}
                         />
                     </div>
                     <button type="submit">

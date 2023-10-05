@@ -63,9 +63,11 @@
 /* Media query for mobile compatibility */
 @media (max-width: 768px) {
     .countdown-timer {
-        width: 100%;
+        width: 90%;
         /* Full width on mobile */
-        margin-left: 0;
+        margin: auto;
         /* Remove the left margin on mobile */
+        font-family: "Oswald";
+            font-size: 14px;
     }
 }

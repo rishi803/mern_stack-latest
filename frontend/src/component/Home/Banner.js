@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
-import "../Home/Banner.css";
+import "../Home/Bann.css";
 import { NavLink } from 'react-router-dom';
 
 const data = [
@@ -22,6 +22,10 @@ const imageLinks = [
 ];
 
 const Banner = () => {
+    const imageStyle = {
+        width: '100%',  // Set your desired width here
+        height: 'auto', // Automatically calculate the height to maintain aspect ratio
+    };
     return (
         <>
 

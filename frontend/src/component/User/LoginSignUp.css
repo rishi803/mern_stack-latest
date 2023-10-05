@@ -165,10 +165,11 @@
 @media screen and (max-width: 600px) {
   .LoginSignUpContainer {
     background-color: white;
+    margin-top: 70px;
   }
   .LoginSignUpBox {
-    width: 100vw;
-    height: 95vh;
+    width: 70vw;
+      height: 75vh;
   }
   .login_signUp_toggle {
     height: 5vmax;

@@ -107,7 +107,7 @@
 
 @media screen and (max-width: 600px) {
   .productsHeading {
-      margin-top: 70px;
+      margin-top: 90px;
     }
   
     .container {
@@ -132,6 +132,7 @@ top: auto;
   align-items: center;
   padding: 12px;
   margin-left: 0px;
+
 }
 
 
@@ -141,7 +142,9 @@ top: auto;
 
 }
 
-
+.products {
+  margin: auto;
+}
   .page-link {
     font: 300 1.2vmax "Roboto";
   }
@@ -149,7 +152,9 @@ top: auto;
   .category-link {
     font: 400 1.6vmax "Roboto";
     
-      padding: 2px;
+      padding: 1px;
+        font-family: "Oswald", sans-serif;
+        font-weight: bold;
     }
 
 }

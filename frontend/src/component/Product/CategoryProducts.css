@@ -26,20 +26,23 @@ p {
     display: none;
 }
 @media (max-width: 768px) {
+    h1 {
+            margin-top: 100px;
+        }
     .product-container {
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 50px;
+        margin-top: 20px;
     }
 
     .product-card {
-        flex-basis: calc(100% - 20px);
-        /* Set flex-basis to 100% */
-        margin-right: 0;
-        margin-bottom: 20px;
-        /* Increase margin-bottom for more spacing */
-        text-align: center;
-        /* Center text content */
+        width: 70%;
+            /* Cards take full width on mobile */
+            margin: auto;
+        
+            /* Adjust margin for mobile */
+            padding: 3vmax;
+            /* Adjust padding 
     }
 
     .product-image {

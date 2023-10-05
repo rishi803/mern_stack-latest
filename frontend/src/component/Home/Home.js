@@ -13,9 +13,9 @@ import { NavLink } from "react-router-dom";
 const categories = [
   "Electronics",
   "Appliances",
-  "Toys and More",
+  "Toys",
   "Fashion",
-  "Home and Furniture",
+  "Furniture",
   "Grocery",
   "SmartPhones",
 ];

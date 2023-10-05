@@ -167,15 +167,14 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
   const { rating, comment, productId } = req.body;
 
   const userId = req.user._id;
-  console.log(productId);
+
   // Check if the user has purchased the product
-  const hasPurchased = await Purchase.exists({ user: userId, product: productId });
+  const purchase = await Purchase.findOne({ user: userId, product: productId });
 
-  console.log(hasPurchased);
-  if (!hasPurchased) {
-    return res.status(403).json({ error: "You can only review products you have purchased." });
+  if (!purchase) {
+
+    return next(new ErrorHander("You can only review products you have purchased.", 404));
   }
-
   const review = {
     user: userId,
     name: req.user.name,

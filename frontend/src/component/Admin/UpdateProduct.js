@@ -15,7 +15,7 @@ import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants";
-
+import "./newProduct.css";
 const UpdateProduct = ({ history, match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -40,9 +40,9 @@ const UpdateProduct = ({ history, match }) => {
   const categories = [
     "Electronics",
     "Appliances",
-    "Toys and More",
+    "Toys",
     "Fashion",
-    "Home and Furniture",
+    "Furniture",
     "Grocery",
     "SmartPhones",
   ];

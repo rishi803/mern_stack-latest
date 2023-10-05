@@ -141,40 +141,70 @@
 @media screen and (max-width: 767px) {
     .custom-menu-toggle {
         display: block;
+        margin-top: -60px;
+        /* Add top margin for spacing */
+        margin-right: -10px;
     }
 
-        .custom-navbar {
+    .custom-icons {
+        display: flex;
+        gap: 10px;
+
+        /* Center the icons */
+        align-items: center;
+        margin-top: -60px;
+        /* Add top margin for spacing */
+    }
+
+    .custom-navbar {
         padding: 35px 40px;
-            height: 20px;
-            /* Increase padding for better mobile readability */
-        }
-.custom-icons .speedDialIcon {
-    width: 30px;
-    height: 40px;
-    border-radius: 100%;
-}
+        /* Increase padding for better mobile readability */
+        height: 20px;
+    }
+
+    .custom-icons .speedDialIcon {
+        width: 30px;
+        height: 40px;
+        border-radius: 100%;
+
+    }
+
+
+    /* Position the search bar below the menu toggle and cart */
     .custom-search-bar {
         position: absolute;
-            top: 15px;
-            left: 55%;
-            /* Center the search bar horizontally */
-            transform: translateX(-50%);
-            /* Center the search bar horizontally */
-            display: flex;
-            align-items: center;
-        }
+        top: 50px;
+        /* Adjust the top value as needed */
+        left: 53%;
 
-        .custom-search-bar input[type="text"] {
-            flex: 1;
-            padding: 5px;
-            /* Adjust padding for better mobile appearance */
-        }
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        .custom-search-bar button[type="submit"] {
-            padding: 5px 5px;
-            /* Adjust the padding for smaller screens */
+
     }
 
+
+    .custom-search-bar input[type="text"] {
+        flex: 1;
+        padding: 5px;
+        width: 100%;
+        /* Set the width to 100% to take up full width */
+        max-width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+        outline: none;
+        box-sizing: border-box;
+
+        /* Adjust padding for better mobile appearance */
+    }
+
+    .custom-search-bar button[type="submit"] {
+        padding: 5px 10px;
+        /* Adjust padding for smaller screens */
+    }
 
     .custom-nav-links {
         display: none;
@@ -188,12 +218,9 @@
         z-index: 1;
         padding: 10px 0;
         /* Add padding to separate links */
-        }
-        
-        .custom-nav-item {
-        margin: 15px 0;
-            /* Add margin to separate individual links */
     }
+
+
 
     .mobile-open .custom-nav-links {
         display: flex;
@@ -201,8 +228,11 @@
         justify-content: center;
     }
 
+
     .mobile-open .custom-icons {
         display: flex;
+        top: 10px;
+        /* Add top margin for spacing */
     }
 
     .custom-icons a {
@@ -211,14 +241,15 @@
     }
 
     .custom-search-icon {
-        margin-right: 10px;
+        margin: auto;
 
     }
 
-        .custom-logo-img {
-            position: relative;
-            top: -30px;
-            /* Adjust the vertical position */
-            left: -50px;
-        }
+
+    .custom-logo-img {
+        position: relative;
+        top: -30px;
+        /* Adjust the vertical position */
+        left: -50px;
+    }
 }

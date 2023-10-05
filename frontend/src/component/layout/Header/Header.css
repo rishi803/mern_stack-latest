@@ -16,7 +16,8 @@
 }
 @media screen and (max-width: 600px) {
   .speedDial {
-    margin-top: 100px;
+    margin-top: 75px;
     /* Apply margin-top on mobile devices */
+  
   }
 }
