@@ -4,6 +4,10 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 
+
+//
+// You can add more fields to store cart item details if needed
+
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -44,6 +48,7 @@ const userSchema = new mongoose.Schema({
 
   resetPasswordToken: String,
   resetPasswordExpire: Date,
+
 });
 
 userSchema.pre("save", async function (next) {

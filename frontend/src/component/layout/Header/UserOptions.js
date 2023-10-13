@@ -20,16 +20,18 @@ const UserOptions = ({ user }) => {
   const alert = useAlert();
   const dispatch = useDispatch();
 
+  const cartItemsCount = cartItems ? cartItems.length : 0; // Check if cartItems is defined
+
   const options = [
     { icon: <ListAltIcon />, name: "Orders", func: orders },
     { icon: <PersonIcon />, name: "Profile", func: account },
     {
       icon: (
         <ShoppingCartIcon
-          style={{ color: cartItems.length > 0 ? "tomato" : "unset" }}
+          style={{ color: cartItemsCount > 0 ? "tomato" : "unset" }}
         />
       ),
-      name: `Cart(${cartItems.length})`,
+      name: `Cart(${cartItemsCount})`,
       func: cart,
     },
     { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
@@ -60,48 +62,46 @@ const UserOptions = ({ user }) => {
     dispatch(logout());
     dispatch(clearCartOnLogout());
     alert.success("Logout Successfully");
-
-
   }
 
   return (
-    <Fragment >
+    <Fragment>
       <div className="main-content">
-      <Backdrop open={open} style={{ zIndex: "10" }} />
-      <SpeedDial
-        ariaLabel="SpeedDial tooltip example"
-        onClose={() => setOpen(false)}
-        onOpen={() => setOpen(true)}
-        style={{ zIndex: "11" }}
-        open={open}
-        direction="down"
-        className="speedDial"
-        icon={
-          user.avatar && user.avatar.url ? (
-            <img
-              className="speedDialIcon"
-              src={user.avatar.url}
-              alt="Profile"
+        <Backdrop open={open} style={{ zIndex: "10" }} />
+        <SpeedDial
+          ariaLabel="SpeedDial tooltip example"
+          onClose={() => setOpen(false)}
+          onOpen={() => setOpen(true)}
+          style={{ zIndex: "11" }}
+          open={open}
+          direction="down"
+          className="speedDial"
+          icon={
+            user.avatar && user.avatar.url ? (
+              <img
+                className="speedDialIcon"
+                src={user.avatar.url}
+                alt="Profile"
+              />
+            ) : (
+              <img
+                className="speedDialIcon"
+                src=""
+                alt="Default Profile"
+              />
+            )
+          }
+        >
+          {options.map((item) => (
+            <SpeedDialAction
+              key={item.name}
+              icon={item.icon}
+              tooltipTitle={item.name}
+              onClick={item.func}
+              tooltipOpen={window.innerWidth <= 600 ? true : false}
             />
-          ) : (
-            <img
-              className="speedDialIcon"
-              src=""
-              alt="Default Profile"
-            />
-          )
-        }
-      >
-        {options.map((item) => (
-          <SpeedDialAction
-            key={item.name}
-            icon={item.icon}
-            tooltipTitle={item.name}
-            onClick={item.func}
-            tooltipOpen={window.innerWidth <= 600 ? true : false}
-          />
-        ))}
-      </SpeedDial>
+          ))}
+        </SpeedDial>
       </div>
     </Fragment>
   );

@@ -94,20 +94,21 @@ export const saveShippingInfo = (data) => async (dispatch) => {
 
 //LoadCartItems
 export const loadCartItems = (isAuthenticated) => (dispatch, getState) => {
-
   try {
     let cartItems = [];
+
+
     if (isAuthenticated) {
       // Load cart items from local storage only if the user is authenticated
       const storedCartItems = localStorage.getItem("cartItems");
       if (storedCartItems) {
         cartItems = JSON.parse(storedCartItems);
       }
-      else {
-        // Initialize an empty cart for a new user
-        cartItems = [];
-      }
+    } else {
+      // Clear cart items from local storage if the user is not authenticated
+      localStorage.removeItem("cartItems");
     }
+
     dispatch({
       type: LOAD_CART_ITEMS,
       payload: { cartItems, isAuthenticated },

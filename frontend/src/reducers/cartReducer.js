@@ -51,10 +51,11 @@ export const cartReducer = (
         orderHistory: [...state.orderHistory, action.payload],
       };
     case LOAD_CART_ITEMS:
-      const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
       return {
         ...state,
-        cartItems: storedCartItems,
+        cartItems: action.payload.cartItems,
+
+
       };
     case CLEAR_CART_ON_LOGOUT:
       return {

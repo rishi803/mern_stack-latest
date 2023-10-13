@@ -10,6 +10,7 @@ const Navbar = ({ user }) => {
     const { cartItems } = useSelector((state) => state.cart);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
+
     const history = useHistory();
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -85,7 +86,7 @@ const Navbar = ({ user }) => {
                 )}
                 <a href="/cart" className="custom-nav-item">
                     <MdAddShoppingCart />
-                    {cartItems.length > 0 && ( // Check if there are items in the cart
+                    {cartItems && cartItems.length > 0 && (
                         <span className="cart-counter">{cartItems.length}</span>
                     )}
 

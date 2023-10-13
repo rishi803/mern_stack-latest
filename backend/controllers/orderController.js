@@ -2,7 +2,7 @@ const Order = require("../models/orderModel");
 const Product = require("../models/productModel");
 const ErrorHander = require("../utils/errorhander");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
-
+const User = require("../models/userModel");
 // Create new Order
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
   const {
@@ -128,3 +128,5 @@ exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
     success: true,
   });
 });
+
+

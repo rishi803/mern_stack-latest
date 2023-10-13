@@ -12,6 +12,8 @@ const {
   getSingleUser,
   updateUserRole,
   deleteUser,
+  loadCartItem,
+  getCartItems,
 } = require("../controllers/userController");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
@@ -42,5 +44,6 @@ router
   .get(isAuthenticatedUser, authorizeRoles("admin"), getSingleUser)
   .put(isAuthenticatedUser, authorizeRoles("admin"), updateUserRole)
   .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteUser);
-
+//router.route("/user/cart").post(isAuthenticatedUser, loadCartItem);
+//router.route("/user/cart/:id").get(isAuthenticatedUser, getCartItems);
 module.exports = router;

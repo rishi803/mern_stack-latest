@@ -51,6 +51,8 @@ const reducer = combineReducers({
   categoryProducts: categoryProductsReducer,
 });
 
+
+// Initialize the initialState with default values
 let initialState = {
   cart: {
     cartItems: localStorage.getItem("cartItems")
@@ -61,6 +63,7 @@ let initialState = {
       : {},
   },
 };
+
 
 const middleware = [thunk];
 

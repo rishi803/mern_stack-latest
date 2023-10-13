@@ -8,11 +8,11 @@ const purchaseSchema = new mongoose.Schema({
         ref: 'User',
         required: true,
     },
-    product: {
+    product: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product',
         required: true,
-    },
+    }],
     amount: {
         type: Number,
         required: true,

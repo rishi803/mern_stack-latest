@@ -4,9 +4,9 @@ const Product = require('../models/productModel');
 const Purchase = require('../models/purchaseModel'); // Import your Purchase model
 
 exports.processPayment = catchAsyncErrors(async (req, res, next) => {
-  console.log(req.body);
+
   const { amount, productId } = req.body;
-  console.log(productId);
+
   // Create a payment intent
   const myPayment = await stripe.paymentIntents.create({
     amount,

@@ -193,6 +193,21 @@ module.exports = function (app) {
       changeOrigin: true,
     })
   );
-
+  app.use(
+    '/api/v1/user/cart',
+    createProxyMiddleware({
+      target: 'http://localhost:4000'
+      ,
+      changeOrigin: true,
+    })
+  );
+  app.use(
+    '/api/v1/cart/add',
+    createProxyMiddleware({
+      target: 'http://localhost:4000'
+      ,
+      changeOrigin: true,
+    })
+  );
 
 }

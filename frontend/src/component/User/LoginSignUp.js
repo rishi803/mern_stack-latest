@@ -39,20 +39,20 @@ const LoginSignUp = ({ history, location }) => {
   const loginSubmit = (e) => {
     e.preventDefault();
     dispatch(login(loginEmail, loginPassword));
-    dispatch(loadCartItems(isAuthenticated));
+
   };
 
   const registerSubmit = (e) => {
     e.preventDefault();
+
 
     const myForm = new FormData();
 
     myForm.set("name", name);
     myForm.set("email", email);
     myForm.set("password", password);
-    if (avatar) {
-      myForm.set("avatar", avatar);
-    }
+    myForm.set("avatar", avatar || ""); // Set avatar, or an empty string if it's falsy
+
     dispatch(register(myForm));
   };
 
@@ -82,9 +82,10 @@ const LoginSignUp = ({ history, location }) => {
     }
 
     if (isAuthenticated) {
+      dispatch(loadCartItems(true, user._id)); 
       history.push(redirect);
     }
-  }, [dispatch, error, alert, history, isAuthenticated, redirect]);
+  }, [dispatch, error, alert, history, isAuthenticated, redirect, user]);
 
   const switchTabs = (e, tab) => {
     if (tab === "login") {
