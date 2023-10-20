@@ -9,7 +9,7 @@ const cloudinary = require("cloudinary");
 // Register a User
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   try {
-    let avatarData = {}; // Initialize an empty object for avatar data
+    let avatarData = null; // Initialize it as null, not an empty object
 
     if (req.body.avatar) {
       // Check if an avatar is provided in the request body
@@ -34,10 +34,8 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
       password,
     };
 
-    // If avatarData is not empty, add it to the userData
-    if (Object.keys(avatarData).length > 0) {
-      userData.avatar = avatarData;
-    }
+    // Set the avatar in the userData, whether it's provided or not
+    userData.avatar = avatarData;
 
     const user = await User.create(userData);
 
