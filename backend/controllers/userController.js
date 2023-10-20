@@ -38,6 +38,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
       name,
       email,
       password,
+      avatar: avatarData,
     };
 
     // Set the avatar in the userData, whether it's provided or not
