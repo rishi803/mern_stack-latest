@@ -24,7 +24,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
         public_id: myCloud.public_id,
         url: myCloud.secure_url,
       };
-    } else {
+    } else if (req.body.avatar == null) {
       // Handle the case when avatar is not provided (set a default avatar)
       avatarData = {
         public_id: 'avatars/alglepsii9nvfwq5qthm',
