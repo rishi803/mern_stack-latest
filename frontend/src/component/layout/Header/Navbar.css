@@ -20,6 +20,7 @@
 .custom-logo-img {
     max-width: 100px;
     height: auto;
+
 }
 
 .custom-menu-toggle {
@@ -248,8 +249,8 @@
 
     .custom-logo-img {
         position: relative;
-        top: -30px;
+        top: -20px;
         /* Adjust the vertical position */
-        left: -50px;
+        left: -40px;
     }
 }

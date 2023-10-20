@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../../images/logo2.png";
+import logo from "../../../images/logo3.png";
 import { MdAccountCircle, MdAddShoppingCart, MdSearch, MdMenu, MdClose } from "react-icons/md";
 import "./Navbar.css";
 import { useHistory } from "react-router-dom";

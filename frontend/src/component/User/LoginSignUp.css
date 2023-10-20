@@ -1,3 +1,4 @@
+
 .LoginSignUpContainer {
   width: 100vw;
   height: 100vh;
@@ -5,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(231, 231, 231);
+  background-image: url("https://www.sss-solutions.org/wp-content/uploads/2018/01/1116146294-login-page-background-image-112.jpg");
   position: fixed;
   top: 0%;
   left: 0;
@@ -165,11 +166,12 @@
 @media screen and (max-width: 600px) {
   .LoginSignUpContainer {
     background-color: white;
-    margin-top: 70px;
+    margin-top: 40px;
   }
   .LoginSignUpBox {
-    width: 70vw;
-      height: 75vh;
+    width: 80vw;
+      height: 60vh;
+      margin-bottom: 25%;
   }
   .login_signUp_toggle {
     height: 5vmax;

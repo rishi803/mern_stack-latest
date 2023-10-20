@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(252, 249, 249);
 }
 .emptyCart > svg {
   font-size: 5vmax;
@@ -129,7 +130,16 @@
 .checkOutBtn>button:hover {
   background-color: rgba(124, 122, 122, 0.767);
 }
+.cartempty {
+  width: 70%;
+  height: 100%;
 
+}
+
+.heading {
+  background-color: rgb(252, 249, 249);
+
+}
 @media screen and (max-width: 600px) {
   .cartPage {
     padding: 0;

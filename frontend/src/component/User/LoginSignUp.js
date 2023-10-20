@@ -45,15 +45,40 @@ const LoginSignUp = ({ history, location }) => {
   const registerSubmit = (e) => {
     e.preventDefault();
 
+    // Define error messages
+    let errors = {};
 
-    const myForm = new FormData();
+    // Check if name length is less than 4
+    if (name.length < 4) {
+      errors.name = "Name must be at least 4 characters long";
+    }
 
-    myForm.set("name", name);
-    myForm.set("email", email);
-    myForm.set("password", password);
-    myForm.set("avatar", avatar || ""); // Set avatar, or an empty string if it's falsy
+    // Check if password is less than 8 characters
+    if (password.length < 8) {
+      errors.password = "Password must be at least 8 characters long";
+    }
 
-    dispatch(register(myForm));
+    // Check if @ is present in the email
+    if (email.indexOf('@') === -1) {
+      errors.email = "Invalid email address";
+    }
+
+    // If there are errors, you can display them to the user or handle them as needed.
+    if (Object.keys(errors).length > 0) {
+      // Handle or display errors
+      Object.values(errors).forEach((error) => {
+        alert.error(error); // You can customize this alert message based on your frontend framework or library
+      });
+    } else {
+    // No errors, proceed with registration
+      const myForm = new FormData();
+      myForm.set("name", name);
+      myForm.set("email", email);
+      myForm.set("password", password);
+      myForm.set("avatar", avatar || "");
+
+      dispatch(register(myForm));
+    }
   };
 
   const registerDataChange = (e) => {

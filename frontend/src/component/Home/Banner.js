@@ -40,11 +40,11 @@ const Banner = () => {
                 cycleNavigation={true}
                 navButtonsProps={{
                     style: {
-                        background: "#fff",
+                        background: "transparent",  // Make the background transparent
                         color: "#494949",
                         borderRadius: 0,
                         marginTop: -22,
-                        height: "100px",
+                        height: "50px",  // Set the height to make the buttons smaller
                     }
                 }}>
                 {

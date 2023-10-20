@@ -61,7 +61,7 @@
 }
 
 /* Media query for mobile compatibility */
-@media (max-width: 768px) {
+@media (max-width: 1168px) {
     .countdown-timer {
         width: 90%;
         /* Full width on mobile */

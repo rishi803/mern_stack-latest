@@ -22,7 +22,7 @@ function CategoryProducts() {
                 <Loader />
             ) : (
                     <div>
-            <h1>Products in {category}</h1>
+                        <h1>{category}</h1>
 
                         <div className="product-container">
 
